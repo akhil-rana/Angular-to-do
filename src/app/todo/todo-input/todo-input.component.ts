@@ -9,12 +9,16 @@ import { DataService} from '../../data.service';
 export class TodoInputComponent implements OnInit {
 
   constructor(private ds:DataService ) { }
-
   listItem
   ngOnInit() {
   }
   add(){
+    if((<HTMLInputElement>document.getElementById("inputl")).value==""){
+      alert("Field Empty");
+      return;
+    }
     this.ds.toDoList.push(this.listItem);
+    this.listItem = null;
   }
 
 }

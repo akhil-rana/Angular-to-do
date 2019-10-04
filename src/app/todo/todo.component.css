@@ -1,0 +1,11 @@
+#input{
+    text-align: center;
+}
+#card{
+    padding-left: 30%;
+}
+mat-card{
+    width: 60%;
+    background: rgb(133, 155, 152);
+    /* text-align: center; */
+}

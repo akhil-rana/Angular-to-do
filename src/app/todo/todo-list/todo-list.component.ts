@@ -8,13 +8,14 @@ import {DataService} from '../../data.service';
 })
 export class TodoListComponent implements OnInit {
 
+  i
   constructor(private ds:DataService) { }
 
   ngOnInit() {
     this.list=this.ds.toDoList;
   }
   list
-
-
-
+  delete(i){
+    this.list.splice(i,1);
+  }
 }
