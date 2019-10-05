@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../data.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {DialogOverviewExampleDialog} from '../dialog-example/dialog-example.component';
 
 @Component({
   selector: 'app-todo-input',
@@ -8,17 +10,30 @@ import { DataService} from '../../data.service';
 })
 export class TodoInputComponent implements OnInit {
 
-  constructor(private ds:DataService ) { }
+  constructor(private ds:DataService,public dialog: MatDialog ) { }
   listItem
   ngOnInit() {
   }
   add(){
     if((<HTMLInputElement>document.getElementById("inputl")).value==""){
-      alert("Field Empty");
-      return;
+      this.opendialog();
     }
-    this.ds.toDoList.push(this.listItem);
-    this.listItem = null;
+    else
+    {
+        this.ds.toDoList.push(this.listItem);
+        this.listItem = null;
+    }
+  }
+  opendialog(): void{
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      height: '230px',
+      width: '300px'    
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
   }
 
-}
+

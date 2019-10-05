@@ -18,6 +18,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card'; 
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogOverviewExampleDialog } from './todo/dialog-example/dialog-example.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
     TodoHeaderComponent,
     TodoFooterComponent,
     TodoInputComponent,
-    TodoListComponent
+    TodoListComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -40,10 +44,13 @@ import {MatIconModule} from '@angular/material/icon';
     MatListModule,
     MatCardModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule,
+    MatDialogModule
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogOverviewExampleDialog]
 })
 export class AppModule { }
