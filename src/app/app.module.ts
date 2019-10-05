@@ -21,6 +21,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogOverviewExampleDialog } from './todo/dialog-example/dialog-example.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,8 @@ import { DialogOverviewExampleDialog } from './todo/dialog-example/dialog-exampl
     MatCheckboxModule,
     MatIconModule,
     MatDividerModule,
-    MatDialogModule
-
+    MatDialogModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
