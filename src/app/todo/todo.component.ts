@@ -16,7 +16,7 @@ export class TodoComponent implements OnInit {
       }
       else
      (<HTMLInputElement>document.getElementById("tcard")).style.background="rgb(133, 155, 152)";
-    }, 100);
+    }, 200);
    
   }
 

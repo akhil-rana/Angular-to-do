@@ -17,7 +17,7 @@ export class TodoHeaderComponent implements OnInit {
       }
       else
      (<HTMLInputElement>document.getElementById("topnav")).style.background="rgb(26, 58, 85)";
-    }, 100);
+    }, 200);
    }
 
 

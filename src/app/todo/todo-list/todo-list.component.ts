@@ -1,11 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../../data.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css']
+  styleUrls: ['./todo-list.component.css'],
+
+
+  animations: [
+    trigger('fadeIn', [state('void', style({
+      opacity: 0
+    })),
+    transition('void => *', animate(700)),
+    ]),
+  ]
+
 })
+
+
+
+
 export class TodoListComponent implements OnInit {
 
   i
@@ -38,6 +53,12 @@ export class TodoListComponent implements OnInit {
 
   showr(i){
     if(i==this.list.length-1)
+      return false;
+    else
+      return true;
+  }
+  showr1(i){
+    if(i==this.list1.length-1)
       return false;
     else
       return true;

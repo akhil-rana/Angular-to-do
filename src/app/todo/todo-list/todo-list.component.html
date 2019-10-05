@@ -2,21 +2,21 @@
 
     <p  *ngIf="flag3()">No Items in List. Enter something.</p>
 
-    <p *ngIf="flag1()">Items left to do:</p>
+    <u><p *ngIf="flag1()"> Items left to do:</p></u>
     <mat-list >
-        <mat-list-item *ngFor="let item of list; let i = index">
-        <mat-checkbox (click)="checked(i)" >{{item}}</mat-checkbox> &nbsp;  &nbsp;  &nbsp;
+        <mat-list-item *ngFor="let item of list; let i = index" [@fadeIn]>
+        <mat-checkbox (click)="checked(i)" unchecked="true" >{{item}}</mat-checkbox> &nbsp;  &nbsp;  &nbsp;
         <button (click)="delete(i)" mat-icon-button><mat-icon>delete</mat-icon> </button>
         <mat-divider *ngIf="showr(i)"></mat-divider>
         </mat-list-item>
     </mat-list>  
 <hr *ngIf="flag()" >
-    <p *ngIf="flag2()">Items done:</p>
+    <u><p *ngIf="flag2()">Items done:</p></u>
     <mat-list >
-        <mat-list-item id="done" *ngFor="let item of list1; let i = index">
-        <mat-checkbox (click)="unchecked(i)" checked="true"> <del> {{item}} </del></mat-checkbox> &nbsp;  &nbsp;  &nbsp;
+        <mat-list-item id="done" *ngFor="let item of list1; let i = index" [@fadeIn]>
+        <mat-checkbox (click)="unchecked(i)" checked="true" > <del> {{item}} </del></mat-checkbox> &nbsp;  &nbsp;  &nbsp;
         <button (click)="delete1(i)" mat-icon-button><mat-icon>delete</mat-icon> </button>
-        <mat-divider *ngIf="showr(i)"></mat-divider>
+        <mat-divider *ngIf="showr1(i)"></mat-divider>
         </mat-list-item>
     </mat-list>  
 </div>
