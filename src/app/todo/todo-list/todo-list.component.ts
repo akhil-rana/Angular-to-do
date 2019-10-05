@@ -10,7 +10,9 @@ export class TodoListComponent implements OnInit {
 
   i
   
-  constructor(private ds:DataService) { }
+  constructor(private ds:DataService) {
+    
+   }
 
   ngOnInit() {
     this.list=this.ds.toDoList;
