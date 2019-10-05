@@ -10,7 +10,16 @@ import {DialogOverviewExampleDialog} from '../dialog-example/dialog-example.comp
 })
 export class TodoInputComponent implements OnInit {
 
-  constructor(private ds:DataService,public dialog: MatDialog ) { }
+  constructor(private ds:DataService,public dialog: MatDialog ) {
+    setInterval(function()
+    { 
+      if(ds.colorflag==1){
+        (<HTMLInputElement>document.getElementById("add")).style.background="rgb(35, 35, 35)";
+      }
+      else
+     (<HTMLInputElement>document.getElementById("add")).style.background="rgb(26, 58, 85)";
+    }, 100);
+   }
   listItem
   ngOnInit() {
   }
