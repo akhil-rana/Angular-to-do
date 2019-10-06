@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../data.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {DialogOverviewExampleDialog} from '../dialog-example/dialog-example.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-todo-input',
@@ -10,7 +11,7 @@ import {DialogOverviewExampleDialog} from '../dialog-example/dialog-example.comp
 })
 export class TodoInputComponent implements OnInit {
 
-  constructor(private ds:DataService,public dialog: MatDialog ) {
+  constructor(private ds:DataService,public dialog: MatDialog,private _snackBar: MatSnackBar ) {
     setInterval(function()
     { 
       if(ds.colorflag==1){
@@ -23,7 +24,7 @@ export class TodoInputComponent implements OnInit {
   listItem
   ngOnInit() {
   }
-  add(){
+  add(message){
     if((<HTMLInputElement>document.getElementById("inputl")).value==""){
       this.opendialog();
     }
@@ -31,6 +32,12 @@ export class TodoInputComponent implements OnInit {
     {
         this.ds.toDoList.push(this.listItem);
         this.listItem = null;
+        let snackBarRef=this._snackBar.open("'"+message+"'"+" inserted", "Undo", {
+          duration: 2000,
+        });
+        snackBarRef.onAction().subscribe(() => {
+          this.ds.toDoList.pop();
+        });
     }
   }
   opendialog(): void{
@@ -43,6 +50,10 @@ export class TodoInputComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-  }
+
+  
+
+
+}
 
 

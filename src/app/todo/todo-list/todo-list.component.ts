@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from '../../data.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class TodoListComponent implements OnInit {
 
   i
   
-  constructor(private ds:DataService) {
+  constructor(private ds:DataService, private _snackBar: MatSnackBar) {
     
    }
 
@@ -40,10 +41,23 @@ export class TodoListComponent implements OnInit {
 
 
   delete(i){
-   this.list.splice(i,1);
+   var j=this.list.splice(i,1);
+
+   let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", {
+    duration: 2000,
+  });
+   snackBarRef.onAction().subscribe(() => {
+    this.ds.toDoList.push(j);
+  });
   }
   delete1(i){
-    this.list1.splice(i,1);
+    var j=this.list1.splice(i,1);
+    let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", {
+      duration: 2000,
+    });
+     snackBarRef.onAction().subscribe(() => {
+      this.ds.doneList.push(j);
+    });
   }
   checked(i){
     this.list1.push(this.list.splice(i,1));
