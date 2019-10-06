@@ -47,7 +47,7 @@ export class TodoListComponent implements OnInit {
     duration: 2000,
   });
    snackBarRef.onAction().subscribe(() => {
-    this.ds.toDoList.push(j);
+    this.ds.toDoList.splice(i,0,j);
   });
   }
   delete1(i){
@@ -56,7 +56,7 @@ export class TodoListComponent implements OnInit {
       duration: 2000,
     });
      snackBarRef.onAction().subscribe(() => {
-      this.ds.doneList.push(j);
+      this.ds.doneList.splice(i,0,j);
     });
   }
   checked(i){
