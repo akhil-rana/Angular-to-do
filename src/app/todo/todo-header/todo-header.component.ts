@@ -14,8 +14,8 @@ export class TodoHeaderComponent implements OnInit {
     { 
       if(ds.colorflag==1){
         (<HTMLInputElement>document.getElementById("topnav")).style.background="rgb(55, 55, 55)";
-        (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle")[0]).style.background="rgb(55, 55, 55)";
-        (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle-checked")[0]).style.background="rgb(22, 22, 22)";
+        (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle")[0]).style.background="rgb(35, 35, 35)";
+        (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle-checked")[0]).style.background="rgb(55, 55, 55)";
         // (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle")[1]).style.background="rgb(55, 55, 55)";
         // (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle-checked")[1]).style.background="rgb(12, 12, 12)";
 
@@ -24,7 +24,7 @@ export class TodoHeaderComponent implements OnInit {
         (<HTMLInputElement>document.getElementById("topnav")).style.background="rgb(26, 58, 85)";
         // (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle")[0]).style.background="rgb(163, 163, 163)";
         (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle-checked")[0]).style.background="rgb(163, 163, 163)";
-         (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle")[1]).style.background="rgb(112, 112, 112)";
+         (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle")[1]).style.background="rgb(135, 135, 135)";
         // (<HTMLInputElement>document.getElementsByClassName("mat-button-toggle-checked")[1]).style.background="rgb(112, 112, 112)";
       }
     }, 200);
