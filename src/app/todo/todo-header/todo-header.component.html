@@ -10,8 +10,8 @@
 <br>
 <div style="text-align: center;">
     <mat-button-toggle-group style="background: red;" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle id="dark" checked="true" (click)="light()"  value="light">Light</mat-button-toggle>
-        <mat-button-toggle id="light" (click)="dark()" value="dark">Dark</mat-button-toggle>
+        <mat-button-toggle matTooltip="Light theme" matTooltipPosition="below" id="dark" checked="true" (click)="light()"  value="light">Light</mat-button-toggle>
+        <mat-button-toggle matTooltip="Dark theme" matTooltipPosition="below" id="light" (click)="dark()" value="dark">Dark</mat-button-toggle>
     </mat-button-toggle-group>
 
 </div>

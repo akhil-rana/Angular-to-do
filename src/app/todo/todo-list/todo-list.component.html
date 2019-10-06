@@ -9,9 +9,9 @@ class="list">
     [cdkDropListData]="list"
     [cdkDropListConnectedTo]="[doneList]"
     (cdkDropListDropped)="onDrop($event)">
-        <mat-list-item class="example-box" *ngFor="let item of list; let i = index" cdkDrag [@fadeIn]>
-        <mat-checkbox (click)="checked(i)" unchecked="true" >{{item}}</mat-checkbox> &nbsp;  &nbsp;  &nbsp;
-        <button (click)="delete(i)" mat-icon-button><mat-icon>delete</mat-icon> </button>
+        <mat-list-item matTooltip="Drag and Drop" matTooltipPosition="left" class="example-box" *ngFor="let item of list; let i = index" cdkDrag [@fadeIn]>
+        <mat-checkbox matTooltip="Specify as done item" matTooltipPosition="left" (click)="checked(i)" unchecked="true" >{{item}}</mat-checkbox> &nbsp;  &nbsp;  &nbsp;
+        <button (click)="delete(i)" mat-icon-button><mat-icon matTooltip="Delete item" matTooltipPosition="right">delete</mat-icon> </button>
         <mat-divider *ngIf="showr(i)"></mat-divider>
         </mat-list-item>
     </mat-list>  
@@ -23,9 +23,9 @@ class="list">
            [cdkDropListData]="list1"
            [cdkDropListConnectedTo]="todoList"
            (cdkDropListDropped)="onDrop($event)">
-        <mat-list-item class="example-box" id="done" *ngFor="let item of list1; let i = index" cdkDrag [@fadeIn]>
-        <mat-checkbox (click)="unchecked(i)" checked="true" > <del> {{item}} </del></mat-checkbox> &nbsp;  &nbsp;  &nbsp;
-        <button (click)="delete1(i)" mat-icon-button><mat-icon>delete</mat-icon> </button>
+        <mat-list-item matTooltip="Drag and Drop" matTooltipPosition="left" class="example-box" id="done" *ngFor="let item of list1; let i = index" cdkDrag [@fadeIn]>
+        <mat-checkbox matTooltip="Specify as not done" matTooltipPosition="left" (click)="unchecked(i)" checked="true" > <del> {{item}} </del></mat-checkbox> &nbsp;  &nbsp;  &nbsp;
+        <button (click)="delete1(i)" mat-icon-button><mat-icon matTooltip="Delete item" matTooltipPosition="right">delete</mat-icon> </button>
         <mat-divider *ngIf="showr1(i)"></mat-divider>
         </mat-list-item>
     </mat-list>  

@@ -22,7 +22,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogOverviewExampleDialog } from './todo/dialog-example/dialog-example.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {DragDropModule} from '@angular/cdk/drag-drop'
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop'
     MatDialogModule,
     MatButtonToggleModule,
     MatSlideToggleModule,
-    DragDropModule
+    DragDropModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent],

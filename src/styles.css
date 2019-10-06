@@ -2,3 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: rgb(122, 172, 177);  }
+
+ .mat-tooltip{
+      font-size: 12px !important;
+}
