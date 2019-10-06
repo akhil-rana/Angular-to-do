@@ -6,3 +6,10 @@
  #topnav{
     background: rgb(26, 58, 85);
  } 
+ .mat-button-toggle{
+   background: rgb(112, 112, 112);
+    
+ }
+ .mat-button-toggle-checked{
+   background: rgb(163, 163, 163);
+}
