@@ -3,6 +3,7 @@ import {DataService} from '../../data.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { TouchSequence } from 'selenium-webdriver';
 
 
 @Component({
@@ -73,10 +74,16 @@ export class TodoListComponent implements OnInit {
   }
 }
   checked(i){
-    this.list1.push(this.list.splice(i,1));
+    // this.list1.push(this.list.splice(i,1));
+    var arr=this.ds.toDoList.splice(i,1);
+    this.ds.doneList.push(arr[0]);
+     
   }
   unchecked(i){
-    this.list.push(this.list1.splice(i,1));
+    // this.list.push(this.list1.splice(i,1));
+    var arr=this.ds.doneList.splice(i,1);
+    this.ds.toDoList.push(arr[0]);
+
   }
 
 

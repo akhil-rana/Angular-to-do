@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../data.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {DialogOverviewExampleDialog} from '../dialog-example/dialog-example.component';
+import {AlreadyExistsDialogComponent} from '../already-exists-dialog/already-exists-dialog.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
@@ -29,10 +30,18 @@ export class TodoInputComponent implements OnInit {
   ngOnInit() {
   }
   add(message){
+    var i;
+    
     var cflag=this.ds.colorflag;
     if((<HTMLInputElement>document.getElementById("inputl")).value==""){
       this.opendialog();
     }
+    else if(this.ds.toDoList.includes(this.listItem) || this.ds.doneList.includes(this.listItem)){
+      this.opendialog2();
+      this.listItem = null;
+    }
+    
+
     else
     {
         this.ds.toDoList.push(this.listItem);
@@ -50,6 +59,7 @@ export class TodoInputComponent implements OnInit {
           });
         }
     }
+
   }
   opendialog(): void{
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
@@ -57,9 +67,16 @@ export class TodoInputComponent implements OnInit {
       width: '300px'    
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+    
+  }
+
+  opendialog2(): void{
+    const dialogRef = this.dialog.open(AlreadyExistsDialogComponent, {
+      height: '230px',
+      width: '300px'    
     });
+
+   
   }
 
   

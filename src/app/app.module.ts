@@ -25,6 +25,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AlreadyExistsDialogComponent } from './todo/already-exists-dialog/already-exists-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     TodoFooterComponent,
     TodoInputComponent,
     TodoListComponent,
-    DialogOverviewExampleDialog
+    DialogOverviewExampleDialog,
+    AlreadyExistsDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogOverviewExampleDialog]
+  entryComponents: [DialogOverviewExampleDialog,AlreadyExistsDialogComponent]
 })
 export class AppModule { }
