@@ -15,3 +15,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background:
       background-color: rgb(216, 216, 216);
       color: black;
 }
+
+.dbackground-dark{
+      background-color: rgb(44, 44, 44);
+      color: white;
+      width: 300px;
+      height: 300px;
+}
+
+.dbackground-light{
+      background-color: rgb(216, 216, 216);
+      color: black;
+      width: 300px;
+      height: 300px;
+}

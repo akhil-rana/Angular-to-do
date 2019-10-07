@@ -26,6 +26,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AlreadyExistsDialogComponent } from './todo/already-exists-dialog/already-exists-dialog.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { AlreadyExistsDialogComponent } from './todo/already-exists-dialog/alrea
     MatSlideToggleModule,
     DragDropModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],
