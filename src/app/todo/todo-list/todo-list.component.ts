@@ -43,22 +43,35 @@ export class TodoListComponent implements OnInit {
   delete(i){
    var j=this.list.splice(i,1);
 
-   let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", {
-    duration: 2000,
-  });
-   snackBarRef.onAction().subscribe(() => {
-    this.ds.toDoList.splice(i,0,j);
-  });
+   if(this.ds.colorflag==0){
+      let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config);
+      snackBarRef.onAction().subscribe(() => {
+        this.ds.toDoList.splice(i,0,j);
+      });
+   }
+   else{
+    let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config1);
+    snackBarRef.onAction().subscribe(() => {
+      this.ds.toDoList.splice(i,0,j);
+    });
+ }
+   
   }
   delete1(i){
     var j=this.list1.splice(i,1);
-    let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", {
-      duration: 2000,
-    });
-     snackBarRef.onAction().subscribe(() => {
+    if(this.ds.colorflag==0){
+      let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config);
+      snackBarRef.onAction().subscribe(() => {
+        this.ds.doneList.splice(i,0,j);
+      });
+   }
+   else{
+    let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config1);
+    snackBarRef.onAction().subscribe(() => {
       this.ds.doneList.splice(i,0,j);
     });
   }
+}
   checked(i){
     this.list1.push(this.list.splice(i,1));
   }

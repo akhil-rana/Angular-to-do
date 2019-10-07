@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {MatSnackBar,MatSnackBarConfig} from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,10 @@ export class DataService {
 
   toDoList=[]
   doneList=[]
-  colorflag
+  colorflag=0
+
+   config = new MatSnackBarConfig();
+   config1 = new MatSnackBarConfig();
+  
   
 }

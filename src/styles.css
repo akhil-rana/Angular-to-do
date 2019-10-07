@@ -6,3 +6,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background:
  .mat-tooltip{
       font-size: 12px !important;
 }
+.background-dark{
+      background-color: rgb(44, 44, 44);
+      color: white;
+}
+
+.background-light{
+      background-color: rgb(216, 216, 216);
+      color: black;
+}

@@ -16,15 +16,20 @@ export class TodoInputComponent implements OnInit {
     { 
       if(ds.colorflag==1){
         (<HTMLInputElement>document.getElementById("add")).style.background="rgb(35, 35, 35)";
+        ds.config1.panelClass = ['background-dark'];
+        ds.config1.duration=1500;
       }
       else
      (<HTMLInputElement>document.getElementById("add")).style.background="rgb(26, 58, 85)";
+        ds.config.panelClass = ['background-light'];
+        ds.config.duration=1500;
     }, 200);
    }
   listItem
   ngOnInit() {
   }
   add(message){
+    var cflag=this.ds.colorflag;
     if((<HTMLInputElement>document.getElementById("inputl")).value==""){
       this.opendialog();
     }
@@ -32,12 +37,18 @@ export class TodoInputComponent implements OnInit {
     {
         this.ds.toDoList.push(this.listItem);
         this.listItem = null;
-        let snackBarRef=this._snackBar.open("'"+message+"'"+" inserted", "Undo", {
-          duration: 2000,
-        });
-        snackBarRef.onAction().subscribe(() => {
-          this.ds.toDoList.pop();
-        });
+        if(cflag==0){
+          let snackBarRef=this._snackBar.open("'"+message+"'"+" inserted", "Undo", this.ds.config);
+          snackBarRef.onAction().subscribe(() => {
+            this.ds.toDoList.pop();
+          });
+        }
+        else{
+          let snackBarRef=this._snackBar.open("'"+message+"'"+" inserted", "Undo", this.ds.config1);
+          snackBarRef.onAction().subscribe(() => {
+            this.ds.toDoList.pop();
+          });
+        }
     }
   }
   opendialog(): void{
