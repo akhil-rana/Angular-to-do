@@ -11,7 +11,7 @@
         <mat-list-item class="example-box" *ngFor="let item of list; let i = index" cdkDrag (cdkDragStarted)="onDrag($event)" (cdkDragEnded)="onDragEnd($event)" [@fadeIn]>
         <mat-checkbox matTooltip="Specify as done item" matTooltipPosition="left" (click)="checked(i)" unchecked="true" >{{item}}</mat-checkbox> <span class="example-fill-remaining-space"></span>
         <button class="deletebutton" (click)="delete(i)" mat-icon-button><mat-icon matTooltip="Delete item" matTooltipPosition="left">delete</mat-icon> </button>
-        <mat-icon class="dragbutton" matTooltip="Drag Item" matTooltipPosition="right" cdkDragHandle>open_with</mat-icon> 
+        <mat-icon class="dragbutton" matTooltip="Drag Item" matTooltipPosition="right" cdkDragHandle>drag_indicator</mat-icon> 
         <mat-divider *ngIf="showr(i)"></mat-divider>
         </mat-list-item>
     </mat-list>  
@@ -28,7 +28,7 @@
         <mat-list-item  class="example-box" id="done" *ngFor="let item of list1; let i = index" cdkDrag (cdkDragStarted)="onDrag($event)" (cdkDragEnded)="onDragEnd($event)" [@fadeIn]>
         <mat-checkbox matTooltip="Specify as not done" matTooltipPosition="left" (click)="unchecked(i)" checked="true" > <del> {{item}} </del></mat-checkbox><span class="example-fill-remaining-space"></span>
         <button  class="deletebutton" (click)="delete1(i)" mat-icon-button><mat-icon matTooltip="Delete item" matTooltipPosition="left">delete</mat-icon> </button>
-        <mat-icon class="dragbutton" matTooltip="Drag Item" matTooltipPosition="right" cdkDragHandle>open_with</mat-icon> 
+        <mat-icon class="dragbutton" matTooltip="Drag Item" matTooltipPosition="right" cdkDragHandle>drag_indicator</mat-icon> 
         <mat-divider *ngIf="showr1(i)"></mat-divider>
         </mat-list-item>
     </mat-list>  
