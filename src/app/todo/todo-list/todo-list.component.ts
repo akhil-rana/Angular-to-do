@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../../data.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, moveItemInArray, transferArrayItem,CdkDragStart,CdkDragEnd,CdkDropList} from '@angular/cdk/drag-drop';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 
@@ -138,6 +138,26 @@ export class TodoListComponent implements OnInit {
         event.previousIndex, event.currentIndex);
     }
   }
+   onDrag(event: CdkDragStart){
+     var i;
+     for(i=0;i<this.list.length+this.list1.length;i++){
+        (<HTMLInputElement>document.getElementsByClassName("deletebutton")[i]).style.display="none";
+        (<HTMLInputElement>document.getElementsByClassName("dragbutton")[i]).style.display="none";
+     }
+   }
+
+   onDragEnd(event: CdkDragEnd){
+    var i;
+    
+    for(i=0;i<this.list.length+this.list1.length;i++){
+       (<HTMLInputElement>document.getElementsByClassName("deletebutton")[i]).style.display="block";
+       (<HTMLInputElement>document.getElementsByClassName("dragbutton")[i]).style.display="block";       
+    }
+  }
+  
+  }
+  
 
 
-}
+
+
