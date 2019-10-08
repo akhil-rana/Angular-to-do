@@ -15,7 +15,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
     trigger('fadeIn', [state('void', style({
       opacity: 0
     })),
-    transition('void => *', animate(700)),
+    transition('void <=> *', animate(300)),
     ]),
   ]
 

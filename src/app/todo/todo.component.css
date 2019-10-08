@@ -2,10 +2,11 @@
     text-align: center;
 }
 #card{
-    padding-left: 30%;
+    padding-left: 20%;
 }
-mat-card{
-    width: 60%;
+#tcard{
+    width: 70%;
     background: rgb(133, 155, 152);
     /* text-align: center; */
 }
+

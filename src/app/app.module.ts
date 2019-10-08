@@ -27,6 +27,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { AlreadyExistsDialogComponent } from './todo/already-exists-dialog/already-exists-dialog.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -60,7 +61,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     DragDropModule,
     MatTooltipModule,
     MatSnackBarModule,
-    MatGridListModule
+    MatGridListModule,
+    FlexLayoutModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
