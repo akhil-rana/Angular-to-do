@@ -18,11 +18,13 @@ export class TodoInputComponent implements OnInit {
         ( < HTMLInputElement > document.getElementById("add")).style.background = "rgb(35, 35, 35)";
         ds.config1.panelClass = ['background-dark'];
         ds.config1.duration = 1500;
-      } else
+      } else {
         ( < HTMLInputElement > document.getElementById("add")).style.background = "rgb(26, 58, 85)";
-      ds.config.panelClass = ['background-light'];
-      ds.config.duration = 1500;
+        ds.config.panelClass = ['background-light'];
+        ds.config.duration = 1500;
+      }
     }, 200);
+
   }
   listItem
   ngOnInit() {}
