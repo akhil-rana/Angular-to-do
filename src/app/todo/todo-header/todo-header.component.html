@@ -1,19 +1,21 @@
 <mat-toolbar id="topnav">
-    <span>To-Do List</span>
-  
-    <!-- This fills the remaining space of the current row -->
-    <span class="example-fill-remaining-space"></span>
-    
+  <span>To-Do List</span>
 
-    <span><a href="https://github.com/akhil-rana/Angular-to-do"><img style="width: 45px; margin-top: 3px;" src="https://i.ibb.co/Ryg9CWP/github.png" alt="git"> </a></span>
-    
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+
+  <span><a href="https://github.com/akhil-rana/Angular-to-do"><img style="width: 45px; margin-top: 3px;"
+        src="https://i.ibb.co/Ryg9CWP/github.png" alt="git"> </a></span>
+
 </mat-toolbar>
 <br>
 <div style="text-align: center;">
-    <mat-button-toggle-group style="background: red;" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle matTooltip="Light theme" matTooltipPosition="below" id="dark" checked="true" (click)="light()"  value="light">Light</mat-button-toggle>
-        <mat-button-toggle matTooltip="Dark theme" matTooltipPosition="below" id="light" (click)="dark()" value="dark">Dark</mat-button-toggle>
-    </mat-button-toggle-group>
+  <mat-button-toggle-group style="background: red;" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle matTooltip="Light theme" matTooltipPosition="below" id="dark" checked="true" (click)="light()"
+      value="light">Light</mat-button-toggle>
+    <mat-button-toggle matTooltip="Dark theme" matTooltipPosition="below" id="light" (click)="dark()" value="dark">Dark
+    </mat-button-toggle>
+  </mat-button-toggle-group>
 
 </div>
-

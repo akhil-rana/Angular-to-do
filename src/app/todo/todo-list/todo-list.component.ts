@@ -20,114 +20,108 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   ]
 
 })
-
-
-
-
 export class TodoListComponent implements OnInit {
 
   i
-  
-  constructor(private ds:DataService, private _snackBar: MatSnackBar) {
-    
-   }
+
+  constructor(private ds: DataService, private _snackBar: MatSnackBar) {
+
+  }
 
   ngOnInit() {
-    this.list=this.ds.toDoList;
-    this.list1=this.ds.doneList;
+    this.list = this.ds.toDoList;
+    this.list1 = this.ds.doneList;
   }
   list
   list1
 
 
-  delete(i){
-   var j=this.list.splice(i,1);
+  delete(i) {
+    var j = this.list.splice(i, 1);
 
-   if(this.ds.colorflag==0){
-      let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config);
+    if (this.ds.colorflag == 0) {
+      let snackBarRef = this._snackBar.open("'" + j + "'" + " was deleted", "Undo", this.ds.config);
       snackBarRef.onAction().subscribe(() => {
-        this.ds.toDoList.splice(i,0,j);
+        this.ds.toDoList.splice(i, 0, j);
       });
-   }
-   else{
-    let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config1);
-    snackBarRef.onAction().subscribe(() => {
-      this.ds.toDoList.splice(i,0,j);
-    });
- }
-   
-  }
-  delete1(i){
-    var j=this.list1.splice(i,1);
-    if(this.ds.colorflag==0){
-      let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config);
+    } else {
+      let snackBarRef = this._snackBar.open("'" + j + "'" + " was deleted", "Undo", this.ds.config1);
       snackBarRef.onAction().subscribe(() => {
-        this.ds.doneList.splice(i,0,j);
+        this.ds.toDoList.splice(i, 0, j);
       });
-   }
-   else{
-    let snackBarRef=this._snackBar.open("'"+j+"'"+" was deleted", "Undo", this.ds.config1);
-    snackBarRef.onAction().subscribe(() => {
-      this.ds.doneList.splice(i,0,j);
-    });
+    }
+
   }
-}
-  checked(i){
+  delete1(i) {
+    var j = this.list1.splice(i, 1);
+    if (this.ds.colorflag == 0) {
+      let snackBarRef = this._snackBar.open("'" + j + "'" + " was deleted", "Undo", this.ds.config);
+      snackBarRef.onAction().subscribe(() => {
+        this.ds.doneList.splice(i, 0, j);
+      });
+    } else {
+      let snackBarRef = this._snackBar.open("'" + j + "'" + " was deleted", "Undo", this.ds.config1);
+      snackBarRef.onAction().subscribe(() => {
+        this.ds.doneList.splice(i, 0, j);
+      });
+    }
+  }
+  checked(i) {
     // this.list1.push(this.list.splice(i,1));
-    var arr=this.ds.toDoList.splice(i,1);
+    var arr = this.ds.toDoList.splice(i, 1);
     this.ds.doneList.push(arr[0]);
-     
+
   }
-  unchecked(i){
+  unchecked(i) {
     // this.list.push(this.list1.splice(i,1));
-    var arr=this.ds.doneList.splice(i,1);
+    var arr = this.ds.doneList.splice(i, 1);
     this.ds.toDoList.push(arr[0]);
   }
 
 
-  showr(i){
-    if(i==this.list.length-1)
+  showr(i) {
+    if (i == this.list.length - 1)
       return false;
     else
       return true;
   }
-  showr1(i){
-    if(i==this.list1.length-1)
+  showr1(i) {
+    if (i == this.list1.length - 1)
       return false;
     else
       return true;
   }
-  flag(){
-    if(this.ds.toDoList.length!=0&&this.ds.doneList.length!=0)
+  flag() {
+    if (this.ds.toDoList.length != 0 && this.ds.doneList.length != 0)
       return true;
     else
-      return false;   
+      return false;
   }
 
-  flag1(){
-    if(this.ds.toDoList.length!=0)
+  flag1() {
+    if (this.ds.toDoList.length != 0)
       return true;
     else
-      return false;   
+      return false;
   }
 
-  flag2(){
-    if(this.ds.doneList.length!=0)
+  flag2() {
+    if (this.ds.doneList.length != 0)
       return true;
     else
-      return false;   
+      return false;
   }
 
-  flag3(){
-    if(this.ds.toDoList.length==0&&this.ds.doneList.length==0)
+  flag3() {
+    if (this.ds.toDoList.length == 0 && this.ds.doneList.length == 0)
       return true;
     else
-      return false;   
+      return false;
   }
 
 
 
-  onDrop(event: CdkDragDrop<string[]>) {
+  onDrop(event: CdkDragDrop < string[] > ) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data,
         event.previousIndex,
@@ -138,25 +132,24 @@ export class TodoListComponent implements OnInit {
         event.previousIndex, event.currentIndex);
     }
   }
-   onDrag(event: CdkDragStart){
-     var i;
-     for(i=0;i<this.list.length+this.list1.length;i++){
-        (<HTMLInputElement>document.getElementsByClassName("deletebutton")[i]).style.display="none";
-        (<HTMLInputElement>document.getElementsByClassName("dragbutton")[i]).style.display="none";
-     }
-   }
-
-   onDragEnd(event: CdkDragEnd){
+  onDrag(event: CdkDragStart) {
     var i;
-    
-    for(i=0;i<this.list.length+this.list1.length;i++){
-       (<HTMLInputElement>document.getElementsByClassName("deletebutton")[i]).style.display="block";
-       (<HTMLInputElement>document.getElementsByClassName("dragbutton")[i]).style.display="block";       
+    for (i = 0; i < this.list.length + this.list1.length; i++) {
+      ( < HTMLInputElement > document.getElementsByClassName("deletebutton")[i]).style.display = "none";
+      ( < HTMLInputElement > document.getElementsByClassName("dragbutton")[i]).style.display = "none";
     }
   }
-  
+
+  onDragEnd(event: CdkDragEnd) {
+    var i;
+
+    for (i = 0; i < this.list.length + this.list1.length; i++) {
+      ( < HTMLInputElement > document.getElementsByClassName("deletebutton")[i]).style.display = "block";
+      ( < HTMLInputElement > document.getElementsByClassName("dragbutton")[i]).style.display = "block";
+    }
   }
-  
+
+}
 
 
 

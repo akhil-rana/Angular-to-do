@@ -7,16 +7,16 @@ import {MatDialogConfig} from '@angular/material/dialog';
 })
 export class DataService {
 
-  constructor() { }
+  constructor() {}
 
-  toDoList=[]
-  doneList=[]
-  colorflag=0
+  toDoList = []
+  doneList = []
+  colorflag = 0
 
-   config = new MatSnackBarConfig();
-   config1 = new MatSnackBarConfig();
-  
-   dconfig=new MatDialogConfig();
-   dconfig1=new MatDialogConfig();
-  
+  config = new MatSnackBarConfig();
+  config1 = new MatSnackBarConfig();
+
+  dconfig = new MatDialogConfig();
+  dconfig1 = new MatDialogConfig();
+
 }

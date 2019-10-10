@@ -9,8 +9,7 @@ import { MatDialogRef} from '@angular/material/dialog';
 
 export class DialogOverviewExampleDialog {
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>) {}
+  constructor(public dialogRef: MatDialogRef < DialogOverviewExampleDialog > ) {}
 
   onNoClick(): void {
     this.dialogRef.close();

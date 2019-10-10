@@ -8,19 +8,16 @@ import {DataService} from '../data.service';
 })
 export class TodoComponent implements OnInit {
 
-  constructor(private ds:DataService) { 
-    setInterval(function()
-    { 
-      if(ds.colorflag==1){
-        (<HTMLInputElement>document.getElementById("tcard")).style.background="rgb(55, 55, 55)";
-      }
-      else
-     (<HTMLInputElement>document.getElementById("tcard")).style.background="rgb(133, 155, 152)";
+  constructor(private ds: DataService) {
+    setInterval(function () {
+      if (ds.colorflag == 1) {
+        ( < HTMLInputElement > document.getElementById("tcard")).style.background = "rgb(55, 55, 55)";
+      } else
+        ( < HTMLInputElement > document.getElementById("tcard")).style.background = "rgb(133, 155, 152)";
     }, 200);
-   
+
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
