@@ -56,8 +56,8 @@ export class TodoInputComponent implements OnInit {
   }
   opendialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      height: '230px',
-      width: '300px'
+      height: '260px',
+      width: '350px'
     });
 
 
@@ -65,8 +65,8 @@ export class TodoInputComponent implements OnInit {
 
   opendialog2(): void {
     const dialogRef = this.dialog.open(AlreadyExistsDialogComponent, {
-      height: '230px',
-      width: '300px'
+      height: '260px',
+      width: '350px'
     });
 
 
