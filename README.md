@@ -1,4 +1,7 @@
 # Material To-Do-List
+A simple frontend To-do list made using material-angular with dark theme support and ready for Heroku deployment.
+Demo : https://to-do-list-ang.herokuapp.com/
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
 
